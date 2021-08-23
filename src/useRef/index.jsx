@@ -11,7 +11,7 @@ const UseRefCounter = () => {
 
 	return <div>
 		useRef:{' '}
-		<span onClick={increment} ref={counter} class='count'>
+		<span onClick={increment} ref={counter} className='count'>
 			{count}
 		</span>
 	</div>;

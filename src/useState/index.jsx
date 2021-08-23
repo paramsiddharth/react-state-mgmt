@@ -9,7 +9,7 @@ const UseStateCounter = () => {
 
 	return <div>
 		useState:{' '}
-		<span class='count' onClick={increment}>
+		<span className='count' onClick={increment}>
 			{count}
 		</span>
 	</div>;

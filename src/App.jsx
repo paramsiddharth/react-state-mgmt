@@ -1,18 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Provider } from 'react-redux';
+
+import store from './redux/store';
 
 import UseStateCounter from './useState';
 import UseRefCounter from './useRef';
+import ReduxCounter from './redux'; 
+
+import './App.css';
 
 function App() {
-  document.title = 'React State Management';
-
   return (
-    <div className="App">
-      <UseStateCounter />
-      <UseRefCounter />
-    </div>
+    <HelmetProvider>
+      <div className="App">
+        <Helmet>
+          <title>React State Management</title>
+        </Helmet>
+        <UseStateCounter />
+        <UseRefCounter />
+        <Provider store={store}>
+          <ReduxCounter />
+        </Provider>
+      </div>
+    </HelmetProvider>
   );
 }
 
